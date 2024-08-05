@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+body{
+    background-color: #ececec;
+    font-family: "Montserrat";
+    text-align: justify ;
+    transition: .2s;
+}
+
+b{
+    color: #5e5e5e;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: #053d05;
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    display: flex;
+    background-color: #fbc412 ;
+    transition: 0.2s;
+    justify-content: space-between;
+    padding: 15px;
+    z-index: 10;
+}
+
+.nav-para-cima{
+    top: -70px !important;
+    transition: .3s;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover{
+    background-color: white;
+    color: #fbc412;
+    transition: .2s;
+}
+
+label{
+    display: none;
+}
+
+.hamburguer{
+    color: white;
+}
+
+#check{
+    display: none;
+}
+
+.container{
+    width: 60%;
+    margin: auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+img{
+    width: 300px;
+    float: left;
+    margin: 10px;
+    border-radius: 2px;
+}
+
+.img-dark{
+    display: none;
+}
+
+.img-light{ 
+    transition: 0.2s;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+ul{
+    list-style: none;
+}
+
+.section-diferenciada{
+    padding: 20px;
+    border: 1px solid #c2c2c2;
+    border-radius: 15px;
+}
+
+.section-diferenciada section{
+    display: flex;
+}
+
+.section-diferenciada section div{
+    margin: 10px 8px;
+    width: 35%;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #c2c2c2;
+    border-radius: 15px;
+}
+
+h3{
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    color: #fbc412;
+    transition: 0.2s;
+}
+
+header{
+    height: 300px;
+    background-color: #fbc412;
+    transition: 0.2s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    user-select: none;
+}
+
+header div{
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    position: relative;
+}
+
+header div:hover{
+    cursor: pointer;
+}
+
+header div img{
+    max-width: 100%;
+}
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+.img-dark{
+    display: none;
+}   
+
+.dark-mode{
+    background-color: #02000c;
+    color: white;
+    transition: 0.2s;
+}
+
+.dark-mode .img-light{
+    display: none;  
+}
+.dark-mode .img-dark{
+    display: inline-block;
+    filter: brightness(50%);
+    transition: 0.2s;
+}
+
+.dark-mode nav{
+    background-color: #040430;
+    transition: 0.2s;
+}
+
+.dark-mode header{
+    background-color: #040430 ;
+    transition: 0.2s;
+}
+
+.dark-mode h3{
+    color: #3e3ec4;
+    transition: 0.2s;
+}
+
+.dark-mode h2{
+    color: #3baf3b;
+    transition: 0.2s;
+}
+
+.dark-mode header div::after{
+    content:"";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(165, 165, 165);
+    top: 50%;
+    left: 62%;
+    border-radius: 50%;
+}
+
+.dark-mode header div::before{
+    content:"";
+    position: absolute;
+    width: 20px;
+    height: 17px;
+    background-color: rgb(165, 165, 165);
+    top: 30%;
+    left: 38%;
+    border-radius: 50%;
+    z-index: 2  ;
+}
+
+.dark-mode nav a:hover{
+    color: #040430;
+    font-weight: 450;
+}
+
+@media (max-width:800px) {
+
+    .container{
+        width: 95%;
+    }
+
+    .section-diferenciada section{
+        display: inline-block;
+    }
+    
+    .section-diferenciada section div{
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    label{
+        display: inline-block;
+        user-select: none;
+    }
+
+    .links{
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+        right: -100%;
+        top: 50px;
+        background-color: #fbc412;
+        transition: .3s;
+    }
+
+    .dark-mode .links{
+        background-color: #040430;
+    }
+    
+    nav div a{
+        display: block;
+    }
+
+    #check:checked ~ .links{
+        right: 0;
+    }
+}
